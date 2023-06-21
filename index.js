@@ -5,7 +5,6 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 //each password should be 15char long
 //Set password length (num of chars)
 //Copy on click feature - copied to clipboard
-//Toggle synmbols/not
 
 let passwordLength = 15;
 let password1 = [];
@@ -20,10 +19,14 @@ function getRandomChar(){
 
 function generateRandomPassword(){
     let newPass = [];
-    for(i= 0; i<passwordLength; i++){
+    for(i= 0; i<getNumChars(); i++){
         newPass.push(getRandomChar());
     }
     return newPass.join("");
+}
+
+function getNumChars(){
+    return document.getElementById("numchar-input").value;
 }
 
 
@@ -35,6 +38,4 @@ generatePasswordButton.addEventListener("click", function() {
     passwordField1.textContent = generateRandomPassword();
     passwordField2.textContent = generateRandomPassword();
 })
-
-
 
